@@ -3,17 +3,19 @@ import createListCountries from './listCountry';
 import createCardCountry from './cardCountry';
 import refs from './refs';
 
-export default function renderPage(data) {
+export function renderPage(data) {
   if (data.length > 10) {
     showNotificationToMany();
-    refs.listCountries.innerHTML = '';
-    refs.cardBlock.innerHTML = '';
+    clearPage();
   } else if (data.length > 1 && data.length <= 10) {
-    refs.listCountries.innerHTML = '';
+    clearPage();
     createListCountries(data);
-    refs.cardBlock.innerHTML = '';
   } else {
-    refs.listCountries.innerHTML = '';
+    clearPage();
     createCardCountry(data);
   }
+}
+export function clearPage() {
+  refs.listCountries.innerHTML = '';
+  refs.cardBlock.innerHTML = '';
 }
