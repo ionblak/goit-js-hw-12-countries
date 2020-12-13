@@ -1,15 +1,22 @@
-import * as _ from 'lodash';
+import debounce from 'lodash.debounce';
+/* Исправил импорт debounce */
 import fetchCountries from './js/fetchCountries';
+import renderPage from './js/render';
 import refs from './js/refs';
 import './styles.css';
 
-refs.inputSearch.addEventListener('input', _.debounce(countrySearch, 500));
+refs.inputSearch.addEventListener('input', debounce(countrySearch, 500));
 
 function countrySearch() {
-  let currentCountry = refs.inputSearch.value.trim();
+  let currentCountry = refs.inputSearch.value;
   if (currentCountry === '') {
     refs.listCountries.innerHTML = '';
     refs.cardBlock.innerHTML = '';
+  } else {
+    fetchCountries(currentCountry).then(data => {
+      if (data) {
+        renderPage(data);
+      }
+    });
   }
-  fetchCountries(currentCountry);
 }
