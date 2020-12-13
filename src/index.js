@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 /* Исправил импорт debounce */
+import { showNotificationFail } from './js/notification';
 import fetchCountries from './js/fetchCountries';
 import renderPage from './js/render';
 import refs from './js/refs';
@@ -13,10 +14,15 @@ function countrySearch() {
     refs.listCountries.innerHTML = '';
     refs.cardBlock.innerHTML = '';
   } else {
-    fetchCountries(currentCountry).then(data => {
-      if (data) {
-        renderPage(data);
-      }
-    });
+    fetchCountries(currentCountry)
+      .then(data => {
+        if (data) {
+          renderPage(data);
+        }
+      })
+      .catch(error => {
+        console.log('Error: ', error);
+        showNotificationFail();
+      });
   }
 }

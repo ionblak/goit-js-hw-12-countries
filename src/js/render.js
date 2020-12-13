@@ -1,11 +1,11 @@
-import showNotification from './notification';
+import { showNotificationToMany } from './notification';
 import createListCountries from './listCountry';
 import createCardCountry from './cardCountry';
 import refs from './refs';
 
 export default function renderPage(data) {
   if (data.length > 10) {
-    showNotification();
+    showNotificationToMany();
     refs.listCountries.innerHTML = '';
     refs.cardBlock.innerHTML = '';
   } else if (data.length > 1 && data.length <= 10) {
