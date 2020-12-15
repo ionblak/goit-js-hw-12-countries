@@ -19,8 +19,8 @@ function countrySearch() {
         renderPage(data);
       })
       .catch(error => {
-        console.log('Error: ', error);
         showNotificationFail();
+        alert('Error: ', error);
         refs.inputSearch.value = '';
         clearPage();
       });
