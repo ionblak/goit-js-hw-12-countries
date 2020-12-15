@@ -10,15 +10,20 @@ refs.inputSearch.addEventListener('input', debounce(countrySearch, 500));
 
 function countrySearch() {
   let currentCountry = refs.inputSearch.value;
-  fetchCountries(currentCountry)
-    .then(data => {
-      if (data) {
+  if (currentCountry !== '') {
+    fetchCountries(currentCountry)
+      .then(data => {
+        if (!data) {
+          return;
+        }
         renderPage(data);
-      }
-    })
-    .catch(error => {
-      console.log('Error: ', error);
-      showNotificationFail();
-      clearPage();
-    });
+        // console.log(data);
+      })
+      .catch(error => {
+        console.log('Error: ', error);
+        showNotificationFail();
+        clearPage();
+      });
+  }
+  clearPage();
 }
