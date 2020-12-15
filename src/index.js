@@ -17,7 +17,6 @@ function countrySearch() {
           return;
         }
         renderPage(data);
-        // console.log(data);
       })
       .catch(error => {
         console.log('Error: ', error);
