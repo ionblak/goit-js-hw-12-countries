@@ -21,6 +21,7 @@ function countrySearch() {
       .catch(error => {
         console.log('Error: ', error);
         showNotificationFail();
+        refs.inputSearch.value = '';
         clearPage();
       });
   }

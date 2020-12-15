@@ -1,4 +1,4 @@
-import { info, error, defaultModules } from '@pnotify/core/dist/PNotify.js';
+import { error, info, defaultModules } from '@pnotify/core/dist/PNotify.js';
 import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -12,7 +12,10 @@ export function showNotificationToMany() {
 export function showNotificationFail() {
   defaultModules.set(PNotifyMobile, {});
   error({
-    text: 'Incorrect country entry!',
+    title: 'STOP!',
+    text: 'Enter correct country name!',
+    hide: false,
   });
 }
+
 //connection plugin Pnotify
