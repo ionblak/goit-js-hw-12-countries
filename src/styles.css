@@ -13,6 +13,7 @@
 .list {
   margin-right: auto;
   margin-left: auto;
+  padding: 10px;
   list-style: none;
   width: 375px;
   cursor: pointer;

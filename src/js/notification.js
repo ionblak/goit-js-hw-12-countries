@@ -7,6 +7,7 @@ function showNotificationToMany() {
   defaultModules.set(PNotifyMobile, {});
   info({
     text: 'Too many matches found. Please enter a more specific query!',
+    delay: 2000,
   });
 }
 function showNotificationFail() {
@@ -14,7 +15,7 @@ function showNotificationFail() {
   error({
     title: 'STOP!',
     text: 'Enter correct country name!',
-    hide: false,
+    delay: 2000,
   });
 }
 
