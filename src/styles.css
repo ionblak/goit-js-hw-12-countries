@@ -15,7 +15,7 @@
   margin-left: auto;
   padding: 10px;
   list-style: none;
-  width: 375px;
+  max-width: 370px;
   cursor: pointer;
   border: solid 1px cadetblue;
 }
