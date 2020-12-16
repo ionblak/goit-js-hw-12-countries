@@ -10,3 +10,15 @@
   margin-right: auto;
   margin-left: auto;
 }
+.list {
+  margin-right: auto;
+  margin-left: auto;
+  list-style: none;
+  width: 375px;
+  cursor: pointer;
+  border: solid 1px cadetblue;
+}
+.link:hover,
+.link:focus {
+  color: blueviolet;
+}

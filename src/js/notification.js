@@ -3,13 +3,13 @@ import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
-export function showNotificationToMany() {
+function showNotificationToMany() {
   defaultModules.set(PNotifyMobile, {});
   info({
     text: 'Too many matches found. Please enter a more specific query!',
   });
 }
-export function showNotificationFail() {
+function showNotificationFail() {
   defaultModules.set(PNotifyMobile, {});
   error({
     title: 'STOP!',
@@ -18,4 +18,5 @@ export function showNotificationFail() {
   });
 }
 
+export { showNotificationFail, showNotificationToMany };
 //connection plugin Pnotify

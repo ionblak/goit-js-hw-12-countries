@@ -3,7 +3,7 @@ import createListCountries from './listCountry';
 import createCardCountry from './cardCountry';
 import refs from './refs';
 
-export function renderPage(data) {
+function renderPage(data) {
   if (data.length > 10) {
     showNotificationToMany();
     clearPage();
@@ -15,7 +15,8 @@ export function renderPage(data) {
     createCardCountry(data);
   }
 }
-export function clearPage() {
+function clearPage() {
   refs.listCountries.innerHTML = '';
   refs.cardBlock.innerHTML = '';
 }
+export { clearPage, renderPage };

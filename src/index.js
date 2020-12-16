@@ -8,7 +8,7 @@ import './styles.css';
 
 refs.inputSearch.addEventListener('input', debounce(countrySearch, 500));
 
-function countrySearch() {
+export default function countrySearch() {
   let currentCountry = refs.inputSearch.value;
   if (currentCountry !== '') {
     fetchCountries(currentCountry)
@@ -19,8 +19,8 @@ function countrySearch() {
         renderPage(data);
       })
       .catch(error => {
+        console.log(error);
         showNotificationFail();
-        alert('Error: ', error);
         refs.inputSearch.value = '';
         clearPage();
       });
