@@ -18,5 +18,6 @@ function renderPage(data) {
 function clearPage() {
   refs.listCountries.innerHTML = '';
   refs.cardBlock.innerHTML = '';
+  refs.listCountries.classList.remove('list');
 }
 export { clearPage, renderPage };
